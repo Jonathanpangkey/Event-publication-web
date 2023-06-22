@@ -1,0 +1,27 @@
+<h1 class="title">Event List</h1>
+<br />
+<% if (events.length === 0) { %>
+<h3 align="center">No events</h3>
+<% } else { %> <% events.forEach(event => { %>
+<div class="eventBox">
+  <h2><%= event.title %></h2>
+  <p><%= event.description %></p>
+  <p>Date: <%= event.date.toLocaleDateString() %></p>
+  <p>Location: <%= event.location %></p>
+  <p>Contact: <%= event.contact %></p>
+  <p>Writer: <%= event.name %></p>
+  <% if (user && user.email === event.email) { %>
+  <div class="btnGroup">
+    <a
+      onclick="return confirm('Are you sure you want to remove it?')"
+      href="/events/delete/<%= event.id %>"
+      ><i class="fas fa-trash"></i
+    ></a>
+    <a href="/events/documentation/<%= event._id %>/upload"><i class="fas fa-camera"></i></a>
+    <a href="/events/edit/<%= event.id %>"><i class="fas fa-edit"></i></a>
+  </div>
+  <% } %>
+</div>
+<br />
+<br />
+<% }); %> <% } %>

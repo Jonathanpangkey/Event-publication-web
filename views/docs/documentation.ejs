@@ -1,0 +1,9 @@
+<h1 class="title">Documentation List</h1>
+<br />
+<div class="docList">
+  <% events.forEach((event) => { %>
+
+  <a href="/events/documentation/<%= event._id %>"><%= event.title %></a>
+
+  <% }) %>
+</div>

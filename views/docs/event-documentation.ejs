@@ -1,0 +1,8 @@
+<h1 class="title"><%= event.title %> Documentation</h1>
+<br>
+<div class="imgBox">
+  <% event.documentation.forEach((doc) => { %>
+    <img class="imageDoc" src="/uploads/<%= doc.filename %>" alt="">
+  <% }) %>
+</div>
+

@@ -1,0 +1,11 @@
+<div class="container-form">
+  <h2 class="title">Upload Documentation for <%= event.title %></h2>
+  <br />
+  <form
+    action="/events/documentation/<%= event._id %>/upload"
+    method="POST"
+    enctype="multipart/form-data">
+    <input type="file" name="file" required />
+    <input type="submit" class="btn" value="submit" />
+  </form>
+</div>
