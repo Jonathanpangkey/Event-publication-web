@@ -2,7 +2,6 @@
 <br>
 <div class="imgBox">
   <% event.documentation.forEach((doc) => { %>
-    <img class="imageDoc" src="/uploads/<%= doc.filename %>" alt="">
+    <img class="imageDoc" src="/tmp/<%= doc.filename %>" alt=""> <!-- Adjust the src path here -->
   <% }) %>
 </div>
-

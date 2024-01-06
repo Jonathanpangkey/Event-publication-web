@@ -30,7 +30,7 @@ connectToDB();
 // file uploading
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/uploads"); // Set the destination folder for uploaded files
+    cb(null, "/tmp"); // Set the destination folder to /tmp for uploaded files
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -39,6 +39,7 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
+
 
 const upload = multer({
   storage: storage,
@@ -93,6 +94,6 @@ app.use("/events", require("./routes/events.js"));
 app.use("/events", require("./routes/docs.js"));
 
 // start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`Server running on  ${PORT}`));
