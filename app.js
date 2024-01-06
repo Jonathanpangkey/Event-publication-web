@@ -30,7 +30,7 @@ connectToDB();
 // file uploading
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "/tmp"); // Set the destination folder to /tmp for uploaded files
+    cb(null, "public/uploads"); // Set the destination folder for uploaded files
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -39,7 +39,6 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
-
 
 const upload = multer({
   storage: storage,
